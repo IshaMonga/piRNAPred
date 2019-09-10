@@ -1,7 +1,2 @@
 # piRNAPred
-Prediction and analysis of piRNAs using epigenetic, thermodynamic and sequence-based features
-Isha Monga, Indranil Banerjee*
-Cellular Virology Laboratory
-Department of Biological Sciences
-Indian Institute of Science Education and Research (IISER), Mohali
-India
+Computational identification of piRNAs using features based on RNA sequence, structure, thermodynamic and physicochemical properties
