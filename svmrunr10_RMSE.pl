@@ -32,8 +32,8 @@ for($y3=0;$y3<@cc;$y3++){
         #system "./svm_learn -z c -t 2 -c $cc[$y3] train_$num.pat model_$num";
 	#system "./svm_learn -z c -t 2 -j $jj[$y4] train_$num.pat model_$num";
         #system "./svm_learn -z c -t 2 -g $gg[$y2] -c $cc[$y3] train_$num.pat model_$num";
-        system "/home/himanit/svm_light_linux64/svm_learn -z r -t 2 -g $gg[$y2] -c $cc[$y3]  train_$num.pat model_$num";
-	system "/home/himanit/svm_light_linux64/svm_classify test_$num.pat model_$num out_$num";
+        system "/home/mongaisha/svm_light_linux64/svm_learn -z r -t 2 -g $gg[$y2] -c $cc[$y3]  train_$num.pat model_$num";
+	system "/home/mongaisha/svm_light_linux64/svm_classify test_$num.pat model_$num out_$num";
 	system "cat out_$num >> observed_data";
 	system "cut -d ' ' -f 1 test_$num.pat >>actual";
 	system "rm model_$num out_$num";
@@ -41,8 +41,8 @@ for($y3=0;$y3<@cc;$y3++){
 	system "paste -d , actual observed_data > act-pred";
 	#print MAP  "g $gg[$y2]   c  $cc[$y3]  \t";
 	print MAP  "g=$gg[$y2]\tc=$cc[$y3]\t";
-	system "perl /home/himanit/act-pred-processing.pl RESULT";
-	#system "perl /media/HIMANI/avppred2/correl_sirna.pl observed_data actual";
+	system "perl /home/mongaisha/act-pred-processing.pl RESULT";
+	#system "perl /media/mongaisha/avppred2/correl_sirna.pl observed_data actual";
 	#open(MAJ,">>RESULT");
 	#print MAJ"-------linear kernel----------------c=$cc[$y]---------\n";
 	#print MAJ"-------polynomial kernel------------d=$dd[$y1]--------\n";
