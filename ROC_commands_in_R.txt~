@@ -1,0 +1,62 @@
+commands for ROC+AUC plot individual predictive_model
+pdf("ROC-plot-EMBO.pdf")
+data=read.csv("data_mdtt-thermo.csv", header=TRUE, sep=",")
+library(prediction)
+library(ROCR)
+pred=prediction(data$Actual,data$Predicted)
+pred=prediction(data$predictions,data$labels)
+perf=performance(pred,"tpr","fpr")
+plot(perf)
+plot(perf,col="blue",xlab="1-Specificity",ylab="Sensitivity")
+legend(0.40,0.20,c("MDTT-Thermo-Epi (0.97)"),col=c("blue"),lwd=1) 
+abline(a=0,b=1)					**this will mark AUC line, please ommit when plotting many ROC plots together***
+auc<-performance(pred,"auc")
+auc<-unlist(slot(auc,"y.values"))
+auc<-round(auc,3)
+auc
+
+
+
+				Step:2 AUC prejction and display					
+			*****to find AUC of one ROC plot and Projecting AUC line*****
+abline(a=0,b=1)					**this will mark AUC line, please ommit when plotting many ROC plots together***
+auc<-performance(pred,"auc")
+auc<-unlist(slot(auc,"y.values"))
+auc<-round(auc,3)
+auc
+legend(.5,.2,auc, title="AUC",cex=1)   				**this will print AUC*** auc can be printed later on with ppt
+
+legend(0.68,0.34,c("MDTT-Thermo-Epi (0.93)"),col=c("blue"),lwd=3)  ***** it will print RUN+MCC***         
+
+
+
+
+				commands for ROC plots of multiple predictive_model together
+pdf("ROC-plot-EMBO.pdf")
+data=read.csv("data_mdtt-thermo.csv", header=TRUE, sep=",")
+library(prediction)
+library(ROCR)
+pred=prediction(data$Actual,data$Predicted)
+pred=prediction(data$predictions,data$labels)
+perf=performance(pred,"tpr","fpr")
+plot(perf)
+plot(perf,col="blue",xlab="1-Specificity",ylab="Sensitivity")
+
+data1=read.csv("data_thermo.csv", header=TRUE, sep=",")
+pred1=prediction(data1$predictions,data1$labels)
+perf=performance(pred1,"tpr","fpr")
+plot(perf, add=TRUE,col="red",xlab="1-Specificity", ylab="Sensitivity", main="ROC Plot")
+
+data2=read.csv("data_triplet-thermo.csv", header=TRUE, sep=",")
+pred2=prediction(data2$predictions,data2$labels)
+perf=performance(pred2,"tpr","fpr")
+plot(perf, add=TRUE,col="black",xlab="1-Specificity", ylab="Sensitivity", main="ROC Plot")
+
+legend(0.50,0.34,c("Thermo (0.93)","MDTT-Thermo-Epi (0.83)", "Triplet-Thermo (0.98)"),col=c("blue","red","black"),lwd=3)
+
+
+
+Further Improved R Scripts:
+
+
+
