@@ -12,3 +12,5 @@ There are four folders within the piRNAPred algortihm folder:
 3. PERL scripts: open-access to the PERL scripts used to calculate k-mer nucleotide composition (k-MNC), thermodynamic, SSTE and physicochemical properties in their respective sub-folders. Further, PERL scripts to call SVMlight and implement 10-fold cross-validation (10nCV).
 
 4. Results: Performance of individual and hybrid features during 10nCV.
+
+![pirnapred_CG-20-508_F1](https://user-images.githubusercontent.com/44770311/154593592-8812aa36-16fe-4bd0-8136-de4022787989.jpeg)
