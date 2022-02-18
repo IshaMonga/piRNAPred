@@ -14,3 +14,5 @@ There are four folders within the piRNAPred algortihm folder:
 4. Results: Performance of individual and hybrid features during 10nCV.
 
 ![pirnapred_CG-20-508_F1](https://user-images.githubusercontent.com/44770311/154593592-8812aa36-16fe-4bd0-8136-de4022787989.jpeg)
+
+Monga, I., & Banerjee, I. (2019). Computational Identification of piRNAs Using Features Based on RNA Sequence, Structure, Thermodynamic and Physicochemical Properties. Current genomics, 20(7), 508–518. https://doi.org/10.2174/1389202920666191129112705
